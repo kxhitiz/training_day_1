@@ -11,7 +11,7 @@ class JukeBox
   end
 
   def next 
-    song = @playlist.at(@current_index + 1)
+    song = @playlist[@current_index + 1]
     if song
       @current_index += 1
       song
@@ -21,7 +21,7 @@ class JukeBox
   end
 
   def previous
-    song = @playlist.at(@current_index - 1)
+    song = @playlist[@current_index - 1]
     if song && @current_index > 0
       @current_index -= 1
       song
@@ -31,11 +31,16 @@ class JukeBox
   end
 
   def remove
-    song = @playlist.at(@current_index)
+    song = @playlist[@current_index]
     @playlist.delete(song)
   end
 
   def current
     playlist.at(current_index) 
   end
+
+  def suffle
+    @playlist.suffle.sample
+  end
+
 end
