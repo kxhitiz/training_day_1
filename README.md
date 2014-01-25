@@ -1,2 +1,3 @@
-training_day_1
-==============
+Havin fun in Training Day1
+
+Please find some urls in the file here.
