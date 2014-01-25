@@ -1,0 +1,8 @@
+.hh{
+    border: 30px solid;
+    border-color: black;
+    height: 200px;
+    width: 200px;
+    border-width: 30px;
+    background: red;
+}
