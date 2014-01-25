@@ -11,4 +11,15 @@ class JukeBox
 		puts @list[@current]
 	end
 
+	def next
+		puts 'Called Next. Moving to next item.'
+		@current += 1
+		get_current
+	end
+
+	def prev
+		puts 'Called Prev. Moving to prev item.'
+		@current -= 1
+		get_current
+	end
 end
