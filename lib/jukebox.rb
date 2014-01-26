@@ -21,6 +21,16 @@ class Jukebox
       "No songs on playlist"
     end
   end
+
+  def previous
+    playlist.rotate!(-1)
+    song = song.first
+    if song
+      song
+    else
+      "No songs on playlist"
+    end
+  end
   
   
 end
