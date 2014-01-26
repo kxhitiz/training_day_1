@@ -5,32 +5,26 @@ class Jukebox
   end
 
   def current
-    if playlist.length <= 0
-      "There are no songs on the playlist"
-    else
-      playlist.first  
-    end
+    current_song_on_playlist
   end
 
   def next
     @playlist.rotate!
-    song = @playlist.first
-    if song
-      song
-    else
-      "No songs on playlist"
-    end
+    current_song_on_playlist
   end
 
   def previous
     @playlist.rotate!(-1)
-    song = @playlist.first
-    if song
-      song
-    else
-      "No songs on playlist"
-    end
+    current_song_on_playlist
   end
   
-  
+  private
+    def current_song_on_playlist
+      song = @playlist.first
+      if song
+        song
+      else
+        "No songs on playlist"
+      end
+    end
 end
