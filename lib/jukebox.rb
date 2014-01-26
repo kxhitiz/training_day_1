@@ -1,6 +1,7 @@
 class Jukebox
-  def initialize(args)
-    
+  attr_accessor :playlist
+  def initialize(*args)
+    playlist = *args
   end
   
   
