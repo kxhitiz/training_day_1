@@ -21,10 +21,6 @@ class Jukebox
   private
     def current_song_on_playlist
       song = @playlist.first
-      if song
-        song
-      else
-        "No songs on playlist"
-      end
+      song ? song : "No songs on playlist"
     end
 end
