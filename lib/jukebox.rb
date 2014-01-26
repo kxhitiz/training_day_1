@@ -13,8 +13,8 @@ class Jukebox
   end
 
   def next
-    playlist.rotate!
-    song = song.first
+    @playlist.rotate!
+    song = @playlist.first
     if song
       song
     else
@@ -23,8 +23,8 @@ class Jukebox
   end
 
   def previous
-    playlist.rotate!(-1)
-    song = song.first
+    @playlist.rotate!(-1)
+    song = @playlist.first
     if song
       song
     else
