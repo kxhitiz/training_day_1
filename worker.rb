@@ -1,14 +1,14 @@
-require './address.rb'
+require './address'
 
 module Eligible
 
   AGE_THRESHOLD = 18
-  AVERAGE_SCORE_THRESHOLD = 80
+  AVERAGE_SCORE_THRESHOLD = 80.0
   # We can enter other cities if possible
   CITY = ["kathmandu"] 
 
   def is_eligible?
-    age > AGE_THRESHOLD && calc_average_test_score > AVERAGE_SCORE_THRESHOLD && CITY.include?address.city.downcase ? true : false
+    age > AGE_THRESHOLD && calc_average_test_score > AVERAGE_SCORE_THRESHOLD && (CITY.include?(address.city.downcase)) ? true : false
   end
 
   def calc_average_test_score
@@ -30,7 +30,7 @@ end
 
 address_hash = {:country => "Nepal", :city => "Kathmandu", :zip_code => "00977"}
 address = Address.new(address_hash)
-workers_info = {:name => "Susan Joshi", :age => 22, :gender => "Male", :test_scores => [80, 90, 90], :address => address}
+workers_info = {:name => "Susan Joshi", :age => 22, :gender => "Male", :test_scores => [50, 50, 80], :address => address}
 
 worker = Worker.new(workers_info)
 if worker.is_eligible?
