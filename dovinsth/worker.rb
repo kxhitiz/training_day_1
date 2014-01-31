@@ -1,5 +1,8 @@
+require './validator'
+
 class Worker
 	attr_accessor :name, :age, :gender, :test_scores, :address
+	include Validator
 
 	def initialize(params = {})
 		@name = params[:name]
